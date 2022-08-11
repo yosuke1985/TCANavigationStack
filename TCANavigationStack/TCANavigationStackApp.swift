@@ -11,7 +11,10 @@ import SwiftUI
 struct TCANavigationStackApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ParkListView(store: .init(initialState: ParkListState(id: UUID()),
+                                      reducer: parkListReducer,
+                                      environment: ParkListEnvironment())
+            )
         }
     }
 }
